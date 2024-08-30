@@ -31,8 +31,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
-// app.UseAuthorization();
+// app.UseHttpsRedirection(); // Uncommenting these causes Swagger to break.  Find out why
+// app.UseAuthorization(); // Uncommenting these causes Swagger to break.
 app.UseCors();
 
 app.MapControllers(); 
