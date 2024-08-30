@@ -1,7 +1,0 @@
-# Ignore compiled files
-*.dll
-*.exe
-*.obj
-*.so
-*.lib
-*.pdb
