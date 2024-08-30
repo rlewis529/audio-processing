@@ -2,8 +2,25 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add CORS policy to allow requests from Swagger UI
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSwaggerUI",
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:7052")
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
@@ -14,9 +31,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-app.UseAuthorization();
+// app.UseHttpsRedirection();
+// app.UseAuthorization();
+app.UseCors();
 
-app.MapControllers(); // This line maps the controllers.
+app.MapControllers(); 
 
 app.Run();
