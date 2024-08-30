@@ -1,16 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyApi.Controllers
+namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ApiController : ControllerBase
     {
         [HttpGet("timestamp")]
         public IActionResult GetTimestamp()
         {
-            var timestamp = DateTime.UtcNow;
-            return Ok(new { Timestamp = timestamp });
+            var utcTime = DateTime.UtcNow;
+            var message = $"The current UTC time is {utcTime:yyyy-MM-ddTHH:mm:ssZ}";
+            return Ok(message);
         }
     }
 }
