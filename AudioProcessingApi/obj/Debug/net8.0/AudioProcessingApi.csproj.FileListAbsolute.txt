@@ -31,3 +31,4 @@ C:\Users\rlewi\Documents\LocalRepos\AudioProcessing\AudioProcessingApi\obj\Debug
 C:\Users\rlewi\Documents\LocalRepos\AudioProcessing\AudioProcessingApi\obj\Debug\net8.0\AudioProcessingApi.pdb
 C:\Users\rlewi\Documents\LocalRepos\AudioProcessing\AudioProcessingApi\obj\Debug\net8.0\AudioProcessingApi.genruntimeconfig.cache
 C:\Users\rlewi\Documents\LocalRepos\AudioProcessing\AudioProcessingApi\obj\Debug\net8.0\ref\AudioProcessingApi.dll
+C:\Users\rlewi\Documents\LocalRepos\AudioProcessing\AudioProcessingApi\obj\Debug\net8.0\AudioProcessingApi.sourcelink.json

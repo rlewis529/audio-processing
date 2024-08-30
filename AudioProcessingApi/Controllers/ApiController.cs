@@ -24,26 +24,23 @@ public class ApiController : ControllerBase
         return Ok("API is available and working!");
     }
 
-    // 2. File Upload API Endpoint
-    [HttpPost("upload")]
-    public IActionResult UploadAudio([FromForm] IFormFile file)
-    {
-        if (file == null || file.Length == 0)
-        {
-            return BadRequest("No file was uploaded.");
-        }
+    // [HttpPost("upload")]
+    // public IActionResult UploadAudio([FromForm] IFormFile file)
+    // {
+    //     if (file == null || file.Length == 0)
+    //     {
+    //         return BadRequest("No file was uploaded.");
+    //     }
 
-        // Check file extension
-        var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
-        if (string.IsNullOrEmpty(ext) || !_permittedExtensions.Contains(ext))
-        {
-            return BadRequest("Invalid file format. Please upload a .wav or .mp3 file.");
-        }
+    //     var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
+    //     if (string.IsNullOrEmpty(ext) || !_permittedExtensions.Contains(ext))
+    //     {
+    //         return BadRequest("Invalid file format. Please upload a .wav or .mp3 file.");
+    //     }
 
-        // Process the file (if necessary)
-        // For now, we are just returning a success message
-        _logger.LogInformation("File {FileName} uploaded successfully at {Time}", file.FileName, DateTime.UtcNow);
+    //     // Logging and processing the file (if necessary)
+    //     _logger.LogInformation("File {FileName} uploaded successfully at {Time}", file.FileName, DateTime.UtcNow);
 
-        return Ok(new { message = "File uploaded successfully!", fileName = file.FileName });
-    }
+    //     return Ok(new { message = "File uploaded successfully!", fileName = file.FileName });
+    // }
 }
