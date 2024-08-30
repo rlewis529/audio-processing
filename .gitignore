@@ -8,3 +8,5 @@
 AudioProcessingApi/bin/Debug/net8.0/AudioProcessingApi.deps.json
 bin
 obj
+packages
+
