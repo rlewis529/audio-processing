@@ -6,18 +6,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add CORS policy to allow requests from Swagger UI
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowSwaggerUI",
-        builder =>
-        {
-            builder.WithOrigins("https://localhost:7052")
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-        });
-});
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
