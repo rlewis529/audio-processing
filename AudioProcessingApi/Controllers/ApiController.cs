@@ -10,8 +10,8 @@ namespace Api.Controllers
         public IActionResult GetTimestamp()
         {
             var utcTime = DateTime.UtcNow;
-            var message = $"The current UTC time is {utcTime:yyyy-MM-ddTHH:mm:ssZ}";
-            return Ok(message);
+            var response = new { message = $"The current UTC time is {utcTime:yyyy-MM-ddTHH:mm:ssZ}", utcTime };
+            return Ok(response);
         }
     }
 }

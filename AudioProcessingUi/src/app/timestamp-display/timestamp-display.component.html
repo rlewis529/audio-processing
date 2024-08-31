@@ -1,0 +1,7 @@
+<div *ngIf="timestamp; else loading">
+    <p>Timestamp: {{ timestamp }}</p>
+  </div>
+  <ng-template #loading>
+    <p>Loading timestamp...</p>
+  </ng-template>
+  
